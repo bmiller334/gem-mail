@@ -1,0 +1,21 @@
+9:45:51 PM	Info	--- START LABEL DEBUG ---
+9:45:51 PM	Info	Found Label: "Finance"
+9:45:51 PM	Info	Found Label: "Social"
+9:45:51 PM	Info	Found Label: "Promotions"
+9:45:51 PM	Info	Found Label: "Receipts"
+9:45:51 PM	Info	Found Label: "Importants"
+9:45:51 PM	Info	Found Label: "[Action Required]"
+9:45:51 PM	Info	Found Label: "Subscriptions"
+9:45:51 PM	Info	Found Label: "Scheduled"
+9:45:51 PM	Info	Found Label: "Shopping"
+9:45:51 PM	Info	Found Label: "Sync Issues"
+9:45:51 PM	Info	Found Label: "Sync Issues/Conflicts"
+9:45:51 PM	Info	Found Label: "Sync Issues/Local Failures"
+9:45:51 PM	Info	Found Label: "Sync Issues/Server Failures"
+9:45:51 PM	Info	Found Label: "Unsubscribe"
+9:45:51 PM	Info	Found Label: "Updates"
+9:45:51 PM	Info	Found Label: "Work"
+9:45:51 PM	Info	Found Label: "Manual Sort"
+9:45:51 PM	Info	Found Label: "Promotions/All-Clad"
+9:45:51 PM	Info	--- END LABEL DEBUG ---
+9:45:51 PM	Info	✅ SUCCESS: 'Promotions' label was found.

@@ -2,6 +2,11 @@ I am starting a new project to build a "Smart Email Organizer" for my personal G
 
 **My technical level:** I am a beginner programmer. I am new to the Google Cloud Platform console. I need you to act as a senior mentor and walk me through every manual step in the GCP console, assuming I do not know where buttons or settings are located.
 
+**GC Project Details**
+* Project name: Gem-Mail
+* Project number: 124652613510
+* Project ID :gem-mail-480201
+
 **Project Goal:**
 I want to create a Google Apps Script or a Google Cloud Function that:
 1.  Triggers when a new email arrives in my Gmail.
@@ -24,7 +29,6 @@ Please guide me through building this from scratch using the *simplest, most rob
 * Tell me exactly how to configure the OAuth Consent Screen (External vs. Internal for personal use).
 
 **Phase 2: Step-by-Step Implementation**
-* Do not give me all the code at once. Let's go file-by-file or step-by-step.
 * Start with setting up the GCP project and enabling APIs.
 * Then, move to authentication.
 
