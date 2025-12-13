@@ -3,23 +3,80 @@ const PROJECT_ID = 'gem-mail-480201';
 const LOCATION = 'us-west1'; 
 const MODEL_ID = 'gemini-2.5-flash'; 
 
+function onOpen(e) {
+  // This is for the legacy "Test as Add-on" menu in the script editor
+  GmailApp.createMenu('AI Organizer')
+    .addItem('Clean Inbox Now', 'processNewEmails')
+    .addToUi();
+}
+
+/**
+ *  The homepage for the Google Workspace Add-on.
+ *  This is what renders in the side panel.
+ */
+function onHomepage(e) {
+  const card = CardService.newCardBuilder()
+      .setHeader(CardService.newCardHeader()
+          .setTitle("AI Email Organizer")
+          .setSubtitle("Keep your inbox clean"))
+      .addSection(CardService.newCardSection()
+          .addWidget(CardService.newTextParagraph()
+              .setText("Click the button below to categorize unread emails in your inbox."))
+          .addWidget(CardService.newTextButton()
+              .setText("Clean Inbox Now")
+              .setOnClickAction(CardService.newAction()
+                  .setFunctionName("processNewEmailsAction"))))
+      .build();
+  return [card];
+}
+
+/**
+ * Wrapper function to be called from the Add-on card button.
+ */
+function processNewEmailsAction(e) {
+  // We can't use Logger directly in the UI response effectively, 
+  // but the function will log to Cloud Logging / Executions.
+  
+  try {
+     const result = processNewEmails();
+     
+     return CardService.newActionResponseBuilder()
+        .setNotification(CardService.newNotification()
+            .setText(result || "Processing complete! Check your inbox."))
+        .build();
+        
+  } catch (err) {
+      return CardService.newActionResponseBuilder()
+        .setNotification(CardService.newNotification()
+            .setText("Error: " + err.toString()))
+        .build();
+  }
+}
+
+
 function processNewEmails() {
   const query = 'label:inbox is:unread -label:"Manual Sort"'; 
   const threads = GmailApp.search(query, 0, 10); 
 
   if (threads.length === 0) {
-    return; 
+    Logger.log("No new emails to process.");
+    return "No new emails to process.";
   }
 
   Logger.log(`Found ${threads.length} threads. Initializing AI...`);
+  
+  // Note: We cannot use GmailApp.getUi() in a CardService add-on action context usually, 
+  // so we rely on the ActionResponse notification or logging.
 
   const labelNames = getAvailableLabels();
   if (labelNames.length === 0) {
     Logger.log("No user labels found.");
-    return;
+    return "No user labels found.";
   }
   
   const labelExamples = getLabelExamples(labelNames);
+
+  let processedCount = 0;
 
   for (const thread of threads) {
     const messages = thread.getMessages();
@@ -29,21 +86,30 @@ function processNewEmails() {
     const body = firstMessage.getPlainBody().substring(0, 5000); 
 
     try {
-      const category = callGeminiAPI(sender, subject, body, labelNames, labelExamples);
-      Logger.log(`Categorized "${subject}" as: ${category}`);
+      const result = callGeminiAPI(sender, subject, body, labelNames, labelExamples);
+      const category = result.label;
+      const reasoning = result.reasoning;
+      
+      Logger.log(`Categorized "${subject}" as: "${category}"`);
+      Logger.log(`Reasoning: ${reasoning}`);
       
       if (category !== "Manual Sort" && category !== "Other") {
         applyLabel(thread, category);
-        thread.moveToArchive(); 
       } else {
         const manualLabel = GmailApp.getUserLabelByName('Manual Sort') || GmailApp.createLabel('Manual Sort');
         thread.addLabel(manualLabel);
       }
       
+      // Always archive the thread after processing
+      thread.moveToArchive(); 
+      processedCount++;
+      
     } catch (e) {
       Logger.log(`Error processing thread "${subject}": ${e.toString()}`);
     }
   }
+  
+  return `Processed ${processedCount} emails.`;
 }
 
 function getAvailableLabels() {
@@ -51,6 +117,9 @@ function getAvailableLabels() {
   const names = [];
   for (const label of labels) {
     const name = label.getName();
+    // Exclude 'Manual Sort' and 'AI-Old-*' 
+    // If the user has a label explicitly named "Other", we allow it in the list so Gemini sees it.
+    // However, the main logic currently treats "Other" as "Manual Sort".
     if (name !== 'Manual Sort' && !name.startsWith('AI-Old-')) { 
       names.push(name);
     }
@@ -126,7 +195,12 @@ function callGeminiAPI(sender, subject, body, labelNames, labelExamples) {
     Body: ${body}
 
     OUTPUT:
-    Return ONLY the label name. Do not explain.
+    Return a valid JSON object with two fields:
+    {
+      "reasoning": "A short explanation of why you chose this label (max 1 sentence).",
+      "label": "The exact label name from the available list."
+    }
+    IMPORTANT: Output ONLY the JSON object. Do not add any conversational text like "Here is the JSON".
   `;
 
   const payload = {
@@ -142,7 +216,8 @@ function callGeminiAPI(sender, subject, body, labelNames, labelExamples) {
     ],
     "generationConfig": {
       "temperature": 0.2,
-      "maxOutputTokens": 50
+      "maxOutputTokens": 800, 
+      "responseMimeType": "application/json"
     }
   };
 
@@ -167,16 +242,36 @@ function callGeminiAPI(sender, subject, body, labelNames, labelExamples) {
   const json = JSON.parse(responseText);
   
   if (!json.candidates || json.candidates.length === 0) {
-     return "Manual Sort"; 
+     return { label: "Manual Sort", reasoning: "No response candidates from Gemini." }; 
   }
 
   if (json.candidates[0].content && json.candidates[0].content.parts) {
      let text = json.candidates[0].content.parts[0].text.trim();
-     text = text.replace(/^"|"$/g, '');
-     return text;
+     
+     // Remove markdown code blocks if present
+     text = text.replace(/```json/gi, '').replace(/```/g, '');
+
+     // Isolate the JSON object by finding the first '{' and last '}'
+     const firstOpen = text.indexOf('{');
+     const lastClose = text.lastIndexOf('}');
+     
+     if (firstOpen !== -1 && lastClose !== -1 && lastClose > firstOpen) {
+       text = text.substring(firstOpen, lastClose + 1);
+     }
+     
+     try {
+       const parsed = JSON.parse(text);
+       return {
+         label: parsed.label || "Manual Sort",
+         reasoning: parsed.reasoning || "No reasoning provided."
+       };
+     } catch (e) {
+       Logger.log("Failed to parse JSON response: " + text);
+       return { label: "Manual Sort", reasoning: "Failed to parse JSON response." };
+     }
   }
   
-  return "Manual Sort";
+  return { label: "Manual Sort", reasoning: "Invalid response format." };
 }
 
 function applyLabel(thread, labelName) {

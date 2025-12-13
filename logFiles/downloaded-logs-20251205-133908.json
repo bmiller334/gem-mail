@@ -1,0 +1,440 @@
+[
+  {
+    "insertId": "-63kdglfni4f55",
+    "jsonPayload": {
+      "message": "Found 10 threads. Initializing AI...",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "invocation_type": "editor",
+        "project_id": "124652613510",
+        "function_name": "unknown"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:23.207877Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:23.733789395Z"
+  },
+  {
+    "insertId": "-skp9bzflra5e4",
+    "jsonPayload": {
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Failed to parse JSON response: Here is the JSON requested:\n```"
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "function_name": "unknown",
+        "invocation_type": "editor",
+        "project_id": "124652613510"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:24.970189Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:25.080362342Z"
+  },
+  {
+    "insertId": "-krbm7pfjzhyad",
+    "jsonPayload": {
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Categorized \"There's an issue with your Mastercard-2533\" as: \"Manual Sort\""
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "project_id": "124652613510",
+        "invocation_type": "editor",
+        "function_name": "unknown"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:24.972071Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:25.878223061Z"
+  },
+  {
+    "insertId": "-vazc8tfnnw09j",
+    "jsonPayload": {
+      "message": "Reasoning: Failed to parse JSON response.",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "invocation_type": "editor",
+        "project_id": "124652613510",
+        "function_name": "unknown"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:24.973647Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:25.458652995Z"
+  },
+  {
+    "insertId": "-2rv3c4flnz2e7",
+    "jsonPayload": {
+      "message": "Categorized \"Your Google Play Order Receipt from Dec 5, 2025\" as: \"Manual Sort\"",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "project_id": "124652613510",
+        "function_name": "unknown",
+        "invocation_type": "editor"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:26.679857Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:27.628497504Z"
+  },
+  {
+    "insertId": "lxwsv5fkz8na0",
+    "jsonPayload": {
+      "message": "Reasoning: Invalid response format.",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "invocation_type": "editor",
+        "function_name": "unknown",
+        "project_id": "124652613510"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:26.682708Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:27.470465245Z"
+  },
+  {
+    "insertId": "-rzz1dvfkcw31y",
+    "jsonPayload": {
+      "message": "Failed to parse JSON response: Here is the JSON requeste",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "function_name": "unknown",
+        "invocation_type": "editor",
+        "project_id": "124652613510"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:28.729359Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:29.094057230Z"
+  },
+  {
+    "insertId": "-eywp2cf5bgiqb",
+    "jsonPayload": {
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Categorized \"Write faster with ChatGPT\" as: \"Manual Sort\""
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "invocation_type": "editor",
+        "project_id": "124652613510",
+        "function_name": "unknown"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:28.731286Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:28.885432899Z"
+  },
+  {
+    "insertId": "-1ly2mffl0metc",
+    "jsonPayload": {
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Reasoning: Failed to parse JSON response."
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "invocation_type": "editor",
+        "function_name": "unknown",
+        "project_id": "124652613510"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:28.732523Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:29.120071845Z"
+  },
+  {
+    "insertId": "6e07kafhsqzea",
+    "jsonPayload": {
+      "message": "Failed to parse JSON response: Here is the JSON",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "function_name": "unknown",
+        "project_id": "124652613510",
+        "invocation_type": "editor"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:31.216806Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:31.441815014Z"
+  },
+  {
+    "insertId": "-vazc8tfnnw5rx",
+    "jsonPayload": {
+      "message": "Categorized \"Discover Nike gifts they'll love\" as: \"Manual Sort\"",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "function_name": "unknown",
+        "invocation_type": "editor",
+        "project_id": "124652613510"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:31.225375Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:31.497252772Z"
+  },
+  {
+    "insertId": "q5amf1fl6z01i",
+    "jsonPayload": {
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Reasoning: Failed to parse JSON response."
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "function_name": "unknown",
+        "project_id": "124652613510",
+        "invocation_type": "editor"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:31.226922Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:31.937120818Z"
+  },
+  {
+    "insertId": "-1mavxgfkb4yx6",
+    "jsonPayload": {
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Failed to parse JSON response: Here is the JSON requeste"
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "project_id": "124652613510",
+        "function_name": "unknown",
+        "invocation_type": "editor"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:33.067372Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:33.905712781Z"
+  },
+  {
+    "insertId": "-6n2whhflwkaxr",
+    "jsonPayload": {
+      "message": "Categorized \"Your holiday offer: 0% APR over 6 months\" as: \"Manual Sort\"",
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      }
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "function_name": "unknown",
+        "project_id": "124652613510",
+        "invocation_type": "editor"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:33.069109Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:33.605158182Z"
+  },
+  {
+    "insertId": "-krbm7pfjzi4x6",
+    "jsonPayload": {
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Reasoning: Failed to parse JSON response."
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "function_name": "unknown",
+        "project_id": "124652613510",
+        "invocation_type": "editor"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:33.071907Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN",
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:33.333067620Z"
+  },
+  {
+    "insertId": "-769365ff5gp0q",
+    "jsonPayload": {
+      "context": {
+        "reportLocation": {
+          "functionName": "[unknown function]",
+          "filePath": "[unknown file]"
+        }
+      },
+      "serviceContext": {
+        "service": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU"
+      },
+      "message": "Execution cancelled."
+    },
+    "resource": {
+      "type": "app_script_function",
+      "labels": {
+        "project_id": "124652613510",
+        "invocation_type": "editor",
+        "function_name": "processNewEmails"
+      }
+    },
+    "timestamp": "2025-12-05T19:38:34.320Z",
+    "severity": "INFO",
+    "labels": {
+      "script.googleapis.com/project_key": "Muj5k578gds2BDMhXZ52I0Ht7vnFOnL-L",
+      "script.googleapis.com/process_id": "EAEA1GOzxNgYN8nlyjB9xa7FE5R4anpoKUAEoSpNt6n19gAihzL21LLJnWvgbWQzhXL1xjfuHahH8ZX-w2RbnLuqvM35ee6ZlZFiXorOSaYN-H-no4Ck_5yazSwpMkHHjJ89ndMcbeEur7AsExe3VJuw_vodvEqHIdchIVeX2lu-iRlFM_VlfU2tfvbmZv_YkRvWzn4IXFBShcz1BmNIv7KdRJCdfWuIMaK2wfkg3c2081wl2hLXrOwARtlm1L5vl5FhDjrtiUsEcgwkZoqwNZmOF4aSdnJw0UTe54EMU",
+      "script.googleapis.com/deployment_id": "AKfycbxdEeNeaw7JfJ2YbsUD-OO9H-_G6bbMk_1ihVINYOU",
+      "script.googleapis.com/user_key": "AB5d20Y5/qzJoFvo8oqnETPvOTCYFpOebEEnUZPYDcRGwhXRR83RXumfl+iW/6rrrHK3/rGebFKN"
+    },
+    "logName": "projects/gem-mail-480201/logs/script.googleapis.com%2Fconsole_logs",
+    "receiveTimestamp": "2025-12-05T19:38:34.501236136Z"
+  }
+]
