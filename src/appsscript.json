@@ -6,18 +6,9 @@
   "runtimeVersion": "V8",
   "oauthScopes": [
     "https://www.googleapis.com/auth/gmail.modify",
+    "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/cloud-platform",
-    "https://www.googleapis.com/auth/script.external_request"
-  ],
-  "addOns": {
-    "common": {
-      "name": "AI Organizer",
-      "logoUrl": "https://www.gstatic.com/images/icons/material/system/1x/mail_black_24dp.png",
-      "homepageTrigger": {
-        "runFunction": "onHomepage",
-        "enabled": true
-      }
-    },
-    "gmail": {}
-  }
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/script.container.ui"
+  ]
 }
