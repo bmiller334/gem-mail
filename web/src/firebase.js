@@ -8,8 +8,9 @@ const firebaseConfig = {
   projectId: "gem-mail-480201",
   appId: "1:124652613510:web:7c2b1e6feeb85cc62a0607",
   storageBucket: "gem-mail-480201.firebasestorage.app",
-  apiKey: "AIzaSyDjKRGv-40u5D1Kqu2clxObUuGfq3W5ltA",
+  apiKey: process.env.VITE_API_KEY,
   authDomain: "gem-mail-480201.firebaseapp.com",
+
   messagingSenderId: "124652613510"
 };
 
