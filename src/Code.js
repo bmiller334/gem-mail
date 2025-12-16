@@ -11,7 +11,7 @@ const STATS_COLLECTION = "email_stats";
 function onOpen() {
   SpreadsheetApp.getUi().createMenu('Gemini Command')
       .addItem('▶ Run Processor', 'main')
-      .addItem('↻ Update Stats', 'updateStats')
+      .addItem('↻ Update Stats', 'forceUpdateStats')
       .addToUi();
 }
 
@@ -111,17 +111,20 @@ function mapToFirestoreValue(value) {
 
 // --- STATS LOGIC ---
 
-function updateStats() {
+function forceUpdateStats() {
+  updateStats("IDLE");
+}
+
+function updateStats(status) {
   const totalUnread = GmailApp.getInboxUnreadCount();
   const processedUnread = GmailApp.search(`label:${PROCESSED_LABEL} is:unread`).length;
-  // Inbox unread usually includes everything in inbox, but let's be specific:
-  // "Pending" = Unread in Inbox that are NOT yet processed
   const pending = GmailApp.search(`is:unread -label:${PROCESSED_LABEL} in:inbox`).length;
 
   const stats = {
     totalUnread: totalUnread,
     processedUnread: processedUnread,
     pending: pending,
+    status: status, // RUNNING or IDLE
     lastUpdated: new Date()
   };
 
@@ -239,10 +242,11 @@ function main() {
   const labelNames = getAvailableLabels();
   const threads = getThreadsToProcess();
 
-  updateStats(); // Initial stats update
+  updateStats("RUNNING"); // Set status to RUNNING
 
   if (threads.length === 0) {
     console.log("No new emails.");
+    updateStats("IDLE"); // Reset if nothing to do
     return;
   }
 
@@ -294,5 +298,5 @@ function main() {
       }
     }
   }
-  updateStats(); // Final stats update
+  updateStats("IDLE"); // Set status back to IDLE
 }

@@ -2,7 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  background-color: #0f172a; /* Slate 900 */
-  color: #f8fafc; /* Slate 50 */
+@layer base {
+  :root {
+    --color-bg: #0f0518;
+    --color-card: #1a0b2e;
+    --color-border: #3d1c5e;
+    --color-text: #e0e0e0;
+    --color-accent-pink: #ff00ff;
+    --color-accent-teal: #00ffff;
+    --color-accent-purple: #bd00ff;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Courier New', Courier, monospace; /* Retro terminal vibe */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-purple); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-pink); 
+}
+
+.vapor-gradient-text {
+  background: linear-gradient(to right, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vapor-card {
+  background: rgba(26, 11, 46, 0.8);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 0 10px rgba(189, 0, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.vapor-glow {
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+
+.neon-border {
+  box-shadow: 0 0 5px var(--color-accent-pink), inset 0 0 5px var(--color-accent-pink);
 }

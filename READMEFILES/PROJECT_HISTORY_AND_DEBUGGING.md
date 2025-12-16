@@ -9,28 +9,33 @@ This document serves as a consolidated history of the **Gem-Mail / Smart Email O
 *   **Project Name:** Gem-Mail (Smart Email Organizer)
 *   **GCP Project ID:** `gem-mail-480201`
 *   **Project Number:** `124652613510`
-*   **Goal:** Automatically organize Gmail emails using Google Vertex AI (Gemini) via Google Apps Script.
+*   **Goal:** Automatically organize Gmail emails using Google Vertex AI (Gemini) via Google Apps Script, and visualize analytics on a React dashboard.
 
 ---
 
 ## 2. Architecture & Setup
 
 ### Architecture Decision (Success)
-*   **Chosen Platform:** Google Apps Script (GAS).
-*   **Why:** Simpler authentication than Cloud Functions. GAS runs as the user, bypassing complex IAM Service Account setups for personal Gmail access.
-*   **Trigger:** Time-Driven (e.g., every 5 minutes) rather than real-time Pub/Sub hooks.
+*   **Backend Logic:** Google Apps Script (GAS).
+    *   **Why:** Simpler authentication than Cloud Functions. GAS runs as the user, bypassing complex IAM Service Account setups for personal Gmail access.
+*   **Database:** Google Cloud Firestore (NoSQL).
+    *   **Why:** Real-time listeners for the frontend, scalable storage for logs and stats.
+*   **Frontend:** React (Vite) + Tailwind CSS + Recharts.
+    *   **Hosting:** Firebase Hosting.
+    *   **Theme:** 1980's Vaporwave (Cyan/Fuchsia/Yellow on Dark Navy).
+*   **Trigger:** Time-Driven (e.g., every 5 minutes) via GAS Triggers.
 
 ### GCP Configuration (Success)
 *   **APIs Enabled:**
     *   Vertex AI API
     *   Gmail API
+    *   Cloud Firestore API
 *   **OAuth Consent Screen:**
     *   **Type:** External (Required for personal `@gmail.com` accounts).
-    *   **Test Users:** None required for the project owner.
 *   **Permissions (Scopes):**
     *   `https://www.googleapis.com/auth/gmail.modify` (Read/Label emails)
-    *   `https://www.googleapis.com/auth/spreadsheets` (Log to Sheets)
     *   `https://www.googleapis.com/auth/cloud-platform` (Vertex AI access)
+    *   `https://www.googleapis.com/auth/datastore` (Firestore read/write)
     *   `https://www.googleapis.com/auth/script.external_request` (External API calls)
 
 ---
@@ -42,87 +47,70 @@ This is the **only** combination of settings that has been proven to work for th
 | Setting | Value | Notes |
 | :--- | :--- | :--- |
 | **Region** | `us-west1` | Confirmed by user as the working region for the newer model. |
-| **Model ID** | `gemini-2.5-flash` | The newest model version required for this project. Legacy versions (1.5) caused 404s in some contexts. |
-| **Payload Role** | `"role": "user"` | **MANDATORY.** Newer models (like 2.5-flash) strictly validate the chat structure. Missing this field causes **400 Invalid Argument**. |
+| **Model ID** | `gemini-2.5-flash` | The newest model version required for this project. |
+| **Payload Role** | `"role": "user"` | **MANDATORY.** Newer models (like 2.5-flash) strictly validate the chat structure. |
+| **Database** | Firestore (Native) | Used for logging processing results and stats. |
 
 ---
 
-## 4. Error Log & Solutions
+## 4. Evolution & Major Pivots
 
-### Error: `404 Not Found` (Publisher Model ... was not found)
-*   **Context:** Occurred when using `gemini-1.5-flash` in regions where it was not provisioned for this project.
-*   **Fix:** Updated to the correct model (`gemini-2.5-flash`) and region (`us-west1`) identified by the user.
+### Pivot 1: From Google Sheets to Firestore
+*   **Initial State:** Logs were written to a Google Sheet (`Logs` tab). Dashboard was a Sheet tab.
+*   **Problem:** Sheets are not suitable for real-time web dashboards; querying is slow and data structure is rigid.
+*   **Solution:** Migrated logging to Firestore (`email_logs` collection). Created a dedicated `email_stats` collection for aggregated metrics (Inbox Pending, Total Unread).
+*   **Outcome:** Enabled a real-time, responsive React web app.
 
-### Error: `400 Invalid Argument` (Please use a valid role)
-*   **Context:** Occurred when switching to `gemini-2.5-flash` without updating the JSON payload.
-*   **Cause:** The API expects the prompt to be wrapped in a `contents` array with a defined `role`.
-*   **Fix:** Added `"role": "user"` to the payload structure:
-    ```json
-    "contents": [{
-      "role": "user",
-      "parts": [{ "text": prompt }]
-    }]
-    ```
-
-### Error: `ReferenceError: GenerativeLanguage is not defined`
-*   **Context:** Occurred when attempting to use the built-in "Advanced Service" for Gemini.
-*   **Cause:** The service was either not enabled in the editor or configured incorrectly in the manifest.
-*   **Fix:** **Abandoned the built-in service.** Switched to `UrlFetchApp.fetch` to call the Vertex AI REST API directly. This is the robust, industry-standard method used in the final code.
-
-### Error: `TypeError: Cannot read properties of null (reading 'getSheetByName')`
-*   **Context:** Occurred when running the script from the editor while using `SpreadsheetApp.getActiveSpreadsheet()`.
-*   **Cause:** The script has no "active" sheet when run from the IDE.
-*   **Fix:** Implemented a fallback mechanism:
-    ```javascript
-    try {
-      return SpreadsheetApp.getActiveSpreadsheet();
-    } catch (e) {
-      return SpreadsheetApp.openById(SPREADSHEET_ID);
-    }
-    ```
-
-### Error: `JSON.parse` Failures
-*   **Context:** Occurred when Gemini wrapped its JSON response in markdown (e.g., ` ```json ... ``` `).
-*   **Fix:** Added a `cleanJsonResponse` helper function to strip markdown tags before parsing.
+### Pivot 2: UI Overhaul (Vaporwave)
+*   **Initial State:** Standard "Business SaaS" look (White/Slate).
+*   **Request:** "1980's Vaporwave vibe".
+*   **Implementation:**
+    *   Background: Deep Navy (`#0b0c2a`) with a retro grid perspective animation.
+    *   Colors: Cyan (`#22d3ee`), Fuchsia (`#d946ef`), Yellow (`#facc15`).
+    *   Typography: Monospace fonts, italicized headers, "scanline" hover effects.
 
 ---
 
-## 5. Deployment & Execution Guide
+## 5. Error Log & Solutions
 
-### How to Run
-1.  **Apps Script Editor:** Open the project bound to the Google Sheet.
-2.  **Verify ID:** Ensure `SPREADSHEET_ID` is set correctly in `Code.js`.
-3.  **Select Function:** Choose `main` from the dropdown.
-4.  **Execute:** Click **Run**.
+### Error: `FirebaseError: [code=permission-denied]`
+*   **Context:** Web dashboard failed to load data.
+*   **Cause:** Firestore security rules were defaulting to "deny all".
+*   **Fix:** Updated `firestore.rules` to allow read/write for development (`allow read, write: if true;`). *Note: Should be locked down for production.*
 
-### Automated Triggers
-To run automatically:
-1.  Go to **Triggers** (clock icon) in the Apps Script editor.
-2.  Add a new trigger:
-    *   **Function:** `main`
-    *   **Event Source:** Time-driven
-    *   **Type:** Minutes timer (e.g., Every 5 minutes).
+### Error: `409 Conflict` (Firestore Create)
+*   **Context:** Occurred when trying to overwrite the "current" stats document using `createDocument`.
+*   **Fix:** Implemented a fallback in Apps Script: `if (response code === 409) -> call updateFirestoreDocument (PATCH)`.
+
+### Error: `404 Not Found` (Publisher Model)
+*   **Context:** Occurred when using `gemini-1.5-flash`.
+*   **Fix:** Updated to `gemini-2.5-flash` in `us-west1`.
+
+### Error: `400 Invalid Argument` (Role)
+*   **Context:** API rejected prompts without a role.
+*   **Fix:** Enforced `{"role": "user"}` in the JSON payload.
 
 ---
 
-## 6. Final Working Code Reference (Snippet)
+## 6. Current Functionality
 
-*See `src/Code.js` for the full implementation.*
+### Backend (Apps Script)
+1.  **Scans Gmail:** Finds unread emails without the `GeminiProcessed` label.
+2.  **Calls Vertex AI:** Sends body to Gemini 2.5 Flash.
+3.  **Logs to Firestore:** Writes rich metadata (Sender, Subject, AI Confidence, Urgency, Category) to `email_logs`.
+4.  **Updates Stats:** Calculates Pending/Processed/Total counts and updates `email_stats/current`.
+5.  **Labels Email:** Applies the AI-selected label in Gmail.
+6.  **Leaves Unread:** As per user request, emails are **not** marked as read.
 
-```javascript
-const LOCATION = "us-west1";
-const MODEL_ID = "gemini-2.5-flash";
+### Frontend (React Web App)
+1.  **Live Feed:** Real-time stream of processed emails with urgency color-coding.
+2.  **Stats:** Live counters for "Inbox Pending", "Sorted (Unread)", and "Total Volume".
+3.  **Visuals:** Confidence score, processing velocity, label distribution chart.
+4.  **Feedback:** Thumbs Up/Down buttons that update the Firestore document (for future reinforcement learning).
 
-function callGeminiAPI(emailBody, sheet) {
-  const url = `https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/publishers/google/models/${MODEL_ID}:generateContent`;
-  
-  const requestBody = {
-    "contents": [{
-      "role": "user", // CRITICAL
-      "parts": [{ "text": prompt }]
-    }],
-    // ...
-  };
-  // ...
-}
-```
+---
+
+## 7. Future Roadmap
+
+1.  **Reinforcement Learning:** Use the collected "Thumbs Up/Down" data to feed "Few-Shot" examples back into the Gemini prompt to improve accuracy over time.
+2.  **Remote Trigger:** Expose the Apps Script as a Web App to allow the "Initialize" button on the dashboard to actually run the script.
